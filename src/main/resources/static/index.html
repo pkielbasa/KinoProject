@@ -1,0 +1,106 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/@bpmn-io/form-js@0.7.2/dist/assets/form-js.css">
+  <meta charset="UTF-8">
+  <style>
+    #form {
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      color: white;
+      margin-top: 60px;
+      font-size: 35px;
+    }
+    body{
+      background-color: black;
+    }
+    .fjs-form {
+      background-color: black !important;
+    }
+    .fjs-form-field-label {
+      color: white;
+      font-size: 20px;
+    }
+    .fjs-input, .fjs-select {
+      border: 0px solid #d5d1cd !important;
+      width: 80% !important;
+      border-radius: 30px !important;
+      background-color: #3c3c3c !important;
+      height: 40px !important;
+      color: white !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+
+    .fjs-button {
+      margin-top: 15px !important;
+      font-size: 20px !important;
+      padding: 15px !important;
+      width: 300px !important;
+      background-color: #f5821e !important;
+      border: 0px solid transparent !important;
+      cursor: pointer !important;
+      border-radius: 30px !important;
+    }
+    marquee {
+      background: #f5821e;
+      color: black;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      font-family: "Arial";
+      display: flex;
+      justify-content: space-between;
+    }
+    #success {
+      display: flex;
+      justify-content: center;
+    }
+    #success-message {
+      color: pink;
+      margin: auto;
+      text-align: center;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<div><img src="https://i.imgur.com/rQpMR7F.png"/></div>
+<marquee behavior="scroll" scrollamount="10" direction="left"><span style="margin-right:200px">Aktualny repertuar: same nowości! </span><span>  Każdy bilet od 16.90 zł</span></marquee>
+<div id="form"></div>
+<div id="success"><span id="success-message"></span></div>
+
+<!--<script type="application/form-schema" src="entry.json"></script>-->
+<script type="application/form-schema" src="recruitment.json"></script>
+
+<script src="https://unpkg.com/@bpmn-io/form-js@0.10.0/dist/form-viewer.umd.js"></script>
+
+<script>
+  $.getJSON('/recruitment.json', function(data) {
+    const schema = data;
+    const container = document.querySelector('#form');
+
+    FormViewer.createForm({
+      container,
+      schema
+    }).then(function(form) {
+      console.log(form);
+      form.on('submit', event => {
+        console.log('Form <submit>', event, event.data);
+
+        $.ajax("/start", {
+          data : JSON.stringify(event.data),
+          contentType : 'application/json',
+          type : 'POST',
+          success: function(data) {
+            form.reset();
+            $('#success-message').html("<b> Rezerwacja powiodła się. Decyzja zostanie przekazana na podany adres email. </b>");
+          }
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

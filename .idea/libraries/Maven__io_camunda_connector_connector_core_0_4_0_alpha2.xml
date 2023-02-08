@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.camunda.connector:connector-core:0.4.0-alpha2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/camunda/connector/connector-core/0.4.0-alpha2/connector-core-0.4.0-alpha2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/camunda/connector/connector-core/0.4.0-alpha2/connector-core-0.4.0-alpha2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/camunda/connector/connector-core/0.4.0-alpha2/connector-core-0.4.0-alpha2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

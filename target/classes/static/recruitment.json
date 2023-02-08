@@ -1,0 +1,175 @@
+{
+  "components": [
+    {
+      "text": "#Zarezerwuj bilet na seans",
+      "type": "text",
+      "id": "Field_1rqy3ze",
+      "properties": {}
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "id": "Field_0tq1nm7",
+      "key": "firstname",
+      "validate": {
+        "required": true,
+        "minLength": 1
+      }
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "id": "Field_1s7u6t4",
+      "key": "lastname",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "E-mail",
+      "type": "textfield",
+      "id": "Field_09j0wed",
+      "key": "email",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      }
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "id": "Field_0roxmsg",
+      "key": "phone",
+      "validate": {
+        "validationType": "phone",
+        "required": false
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Heaven in Hell",
+          "value": "Heaven in Hell"
+        },
+        {
+          "label": "Podejrzana",
+          "value": "Podejrzana"
+        },
+        {
+          "label": "Asteriks i Obeliks: Imperium Smoka",
+          "value": "Asteriks i Obeliks: Imperium Smoka"
+        },
+        {
+          "label": "After",
+          "value": "After"
+        },
+        {
+          "label": "After We Collided",
+          "value": "After We Collided"
+        },
+        {
+          "label": "After 4",
+          "value": "After 4"
+        }
+      ],
+      "label": "Movie",
+      "type": "select",
+      "id": "Field_1qlfr8b",
+      "key": "movie",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Tarnów",
+          "value": "Tarnów"
+        },
+        {
+          "label": "Kraków",
+          "value": "Kraków"
+        },
+        {
+          "label": "Nowy Korczyn",
+          "value": "Nowy Korczyn"
+        }
+      ],
+      "label": "Miasto",
+      "type": "select",
+      "id": "Field_1mwybqz",
+      "key": "town",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "11/02/2023",
+          "value": "11/02/2023"
+        },
+        {
+          "label": "08/02/2023",
+          "value": "08/02/2023"
+        },
+        {
+          "label": "09/02/2023",
+          "value": "09/02/2023"
+        },
+        {
+          "label": "10/02/2023",
+          "value": "10/02/2023"
+        }
+      ],
+      "label": "Date",
+      "type": "select",
+      "id": "Field_1dx6kt9",
+      "key": "date",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "16:00",
+          "value": "16:00"
+        },
+        {
+          "label": "17:45",
+          "value": "17:45"
+        },
+        {
+          "label": "18:30",
+          "value": "18:30"
+        },
+        {
+          "label": "20:00",
+          "value": "20:00"
+        }
+      ],
+      "label": "Time",
+      "type": "select",
+      "id": "Field_12o41q1",
+      "key": "time",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Zarezerwuj bilet",
+      "type": "button",
+      "id": "Field_09652t2",
+      "key": "field_13kp54x"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0oz874u",
+  "exporter": {
+    "name": "form-js (https://demo.bpmn.io)",
+    "version": "0.10.0"
+  },
+  "schemaVersion": 6
+}
